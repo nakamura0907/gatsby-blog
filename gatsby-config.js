@@ -5,6 +5,27 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        baseUrl: `nakamura0907.wp.xdomain.jp`,
+        hostingWPCOM: false,
+        protocol: "http",
+        useACF: false,
+        auth: {},
+        verboseOutput: true,
+        includedRoutes: [
+          "**/categories",
+          "**/posts",
+          "**/pages",
+          "**/media",
+          "**/taxonomies",
+          "**/users",
+          "**/tags",
+        ],
+      },
+    },
+    "gatsby-plugin-netlify",
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
